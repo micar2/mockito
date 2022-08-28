@@ -36,7 +36,7 @@ public class IndependencyController {
         country = Optional.ofNullable(countryRepository.findCountryByIsoCode(countryId.toUpperCase()));
 
         if (country.isPresent()) {
-            Period period = diferenciaEntreFechas.calculateYearsOfIndependency(country.get().getCountryIdependenceDate());
+            Period period = diferenciaEntreFechas.calculateYearsOfIndependency(country.get().getCountryIdependenceDate(),null);
             countryResponse.setCountryName(country.get().getCountryName());
             countryResponse.setCapitalName(country.get().getCountryCapital());
             countryResponse.setIndependenceDate(country.get().getCountryIdependenceDate());
